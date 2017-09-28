@@ -1,0 +1,143 @@
+.header{
+  height: 100%;
+  padding-top: rem-calc(42);
+  margin-bottom: 100px;
+  @include bg-img('img/head.png');
+  background-attachment: fixed;
+  &__navigation{
+    @include flex-grid-row;
+    padding-bottom: 230px;
+  }
+  &__logo-grid{
+    @include flex-grid-column(6);
+  }
+  &__logo{
+    display: inline-block;
+    color: $color_2;
+    font-family: $title-font-family;
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.3s;
+    animation-name: hinge;
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    animation-iteration-count: infinite;
+    @include breakpoint(xs){
+      &--transform{
+        transform: translateX(-43%) rotate(-90deg);
+      }
+    }
+  }
+  &__menu-icon{
+    @include flex-grid-column(6);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  &__menu{
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    background-color: lightsteelblue;
+    transform: translateX(+300px);
+    transition: all 0.3s;
+    @include breakpoint(xs) {
+      width: 250px;
+      @include breakpoint(xs){
+        transform: translateX(250px);
+      }
+    }
+    &--show{
+      transform: translateX(0);
+    }
+    a{
+      background-color: lightsteelblue;
+    }
+  }
+}
+
+.info{
+  @include flex-grid-column(6);
+  margin: 0 auto;
+  padding-bottom: 125px;
+  &__pre{
+    @include flex-grid-column(2);
+    margin: 0 auto;
+  }
+  &__pre-title{
+    margin-bottom: 0;
+    color: $color_2;
+    font-family: $title-font-family;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: uppercase;
+    background-color: #7beec7;
+    text-align: center;
+  }
+  &__title{
+    padding: 32px 47px;
+    color: $color_2;
+    font-family: $title-font-family;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: uppercase;
+    text-align: center;
+    border: 10px solid #60606e;
+  }
+  &__title:hover{
+    animation-name: tada;
+    animation-duration: 2s;
+    animation-fill-mode: both;
+    animation-iteration-count: 1;
+  }
+  &__sub-title{
+    color: $color_2;
+    font-family: $main-font-family;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: center;
+  }
+}
+
+.history{
+  @include flex-grid-row;
+  &__image{
+    @include flex-grid-column(6);
+    position: relative;
+  }
+  &__img{
+    position: absolute;
+  }
+  &__info{
+    @include flex-grid-column(6);
+    position: relative;
+  }
+  &__info-title{
+    color: $color_2;
+    font-family: $title-font-family;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 48px;
+    text-transform: uppercase;
+  }
+  &__info-sub-title{
+    color: $color_2;
+    font-family: $main-font-family;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+  &__button{
+    position: absolute;
+    bottom: -24px;
+    left: 80%;
+  }
+}

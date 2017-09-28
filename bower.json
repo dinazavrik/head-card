@@ -1,0 +1,20 @@
+{
+  "name": "bower-file-project",
+  "description": "My first bower project",
+  "main": "gulpfile.js",
+  "authors": [
+    "Andr"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "foundation-sites": "^6.4.3"
+  }
+}

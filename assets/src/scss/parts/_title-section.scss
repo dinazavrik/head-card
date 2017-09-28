@@ -1,0 +1,32 @@
+.title-section{
+  @include flex-grid-column(7);
+  @include flex-col;
+  justify-content: center;
+  align-self: center;
+  text-align: center;
+  margin-bottom: rem-calc(90);
+  @include breakpoint(xs){
+    @include flex-grid-column(10);
+  }
+  &__title{
+    margin-bottom: 10px;
+    position: relative;
+    font-weight: 700;
+    line-height: 48px;
+    font-size: rem-calc(30);
+    text-transform: uppercase;
+    &:before{
+      content: '';
+      position: absolute;
+      width: 67px;
+      height: 21px;
+      background-color: #7beec7;
+      z-index: -1;
+      bottom: 3px;
+      left: 0;
+    }
+  }
+  &__sub-title{
+    margin-bottom: rem-calc(10);
+  }
+}

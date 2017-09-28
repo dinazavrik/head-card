@@ -1,0 +1,75 @@
+.icon-txt-two-cols{
+  display: flex;
+  flex-wrap: wrap;
+  &__col{
+    @include flex-grid-column(6);
+    padding-right: rem-calc(15);
+  }
+  &__title{
+    font-size: rem-calc(18);
+    line-height: rem-calc(24);
+    text-transform: uppercase;
+  }
+}
+
+.card{
+  position: relative;
+  margin: 0 auto;
+  perspective: 800px;
+  &__item{
+    position: absolute;
+    left:0;
+    top: 0;
+    width: 250px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transition: .4s ease;
+    transition-property: transform, background-color;
+    &--front{
+      backface-visibility: hidden;
+    }
+    &--back{
+      transform: rotateY(-180deg) translateZ(0);
+      backface-visibility: hidden;
+      border: 1px solid gray;
+      border-radius: 10px;
+    }
+  }
+  &:hover{
+    .front {
+      transform: rotateY(-180deg);
+    }
+    .back{
+      transform: rotateY(0deg);
+    }
+  }
+  &__img{
+    width: 100%;
+    height: 100%;
+  }
+  &__text{
+    color: black;
+    font-size: 50px;
+    &--line{
+      margin-bottom: 30px;
+      margin-left: 5px;
+    }
+    &--center{
+      font-size: 70px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    &--end{
+      text-align: end;
+      margin-right: 5px;
+    }
+    &--red{
+      color: red;
+    }
+  }
+}
+
+h3, h4, h5{
+  margin-top: 0;
+  margin-bottom: 0;
+}

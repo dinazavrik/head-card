@@ -1,0 +1,23 @@
+.txt-cols-img{
+  padding-top: rem-calc(150);
+  padding-bottom: rem-calc(90);
+  &__row{
+    @include flex-grid-column(12, 15);
+    @include flex-grid-row;
+    &--center{
+      justify-content: center;
+    }
+  }
+  &__text-wrap{
+    @include flex-grid-column(7);
+    @include breakpoint(xs){
+      @include flex-grid-column(12);
+    }
+  }
+  &__image-wrap{
+    @include flex-grid-column(5);
+    @include breakpoint(xs){
+      @include flex-grid-column(12);
+    }
+  }
+}

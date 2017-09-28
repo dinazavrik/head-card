@@ -1,0 +1,116 @@
+@mixin flex-col(){
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  flex-flow: wrap;
+}
+
+@mixin flat-btn($bg-color) {
+  display: block;
+  min-width: 200px;
+  height: 55px;
+  font-family: $main-font-family;
+  font-size: 20px;
+  line-height: 55px;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: $white-color;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  transition: all .3s ease;
+  text-align: center;
+  background-color: $bg-color;
+  text-decoration: none;
+  &:hover {
+    background-color: darken($bg-color, 15%);
+  }
+}
+
+//Foundation Breakpoints
+@mixin breakpoint($point) {
+  /* Small only */
+  @if $point == xs {
+    @media screen and (max-width: 39.9375em) {
+      @content;
+    }
+  }
+    /* Medium and up */
+  @else if $point == sm {
+    @media screen and (min-width: 40em) {
+      @content;
+    }
+  }
+    /* Medium only */
+  @else if $point == tb {
+    @media screen and (min-width: 40em) and (max-width: 63.9375em) {
+      @content;
+    }
+  }
+    /* Large and up */
+  @else if $point == md {
+    @media screen and (min-width: 64em) {
+      @content;
+    }
+  }
+    /* Large only */
+  @else if $point == desktop {
+    @media screen and (min-width: 64em) and (max-width: 74.9375em) {
+      @content;
+    }
+  }
+}
+
+//// Bootstrap Breakpoints (Example: @include breakpoint(tablet) { YOUR CODE GOES HERE } )
+//@mixin breakpoint($point) {
+//  // Extra small devices (320px +)
+//  @if $point==xs {
+//    @media only screen and (min-width: 320px) and (max-width: 767px) {
+//      @content;
+//    }
+//  }
+//  // Small devices (480px +)
+//  @else if $point==sm {
+//    @media only screen and (min-width: 480px) {
+//      @content;
+//    }
+//  }
+//  // Tablets (768px +)
+//  @else if $point==tb {
+//    @media only screen and (min-width: 768px) {
+//      @content;
+//    }
+//  }
+//  // Medium Devices, Notebooks (992px +)
+//  @else if $point==md {
+//    @media only screen and (min-width: 992px) {
+//      @content;
+//    }
+//  }
+//  // Large Devices, Wide Screens
+//  @else if $point==desktop {
+//    @media only screen and (min-width: 1200px) {
+//      @content;
+//    }
+//  }
+//}
+
+////Browsers prefixes
+//@mixin crossBrowser($property, $val) {
+//  -webkit-#{$property}: $val;
+//  -moz-#{$property}: $val;
+//  -ms-#{$property}: $val;
+//  #{$property}: $val;
+//}
+
+//Background image 
+@mixin bg-img($url) {
+  background-image: url($url);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+
+
+
